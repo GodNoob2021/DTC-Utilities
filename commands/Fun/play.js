@@ -1,7 +1,7 @@
 const ytdl = require('ytdl-core');
 const ytSearch = require('yt-search');
 const { getInfo } = require('ytdl-core');
-const message = require('../../events/guild/message');
+// const message = require('../../events/guild/message');
 const queue = new Map();
 
 module.exports = {

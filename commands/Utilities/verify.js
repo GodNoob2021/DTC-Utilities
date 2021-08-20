@@ -4,18 +4,18 @@ module.exports = {
     cooldown: 0,
     description: 'Verify command',
     execute(client, message, args){
-    let welcomeRole = guildMember.guild.roles.cache.find(r => r.name === 'Member');
-    let extraRole1 = guildMember.guild.roles.cache.find(r => r.name.includes('server'));
-    let extraRole2 = guildMember.guild.roles.cache.find(r => r.name.includes('rank'));
-    let extraRole3 = guildMember.guild.roles.cache.find(r => r.name.includes('self'));
+        let welcomeRole = message.guild.roles.cache.find(r => r.name === 'Member');
+        let extraRole1 = message.guild.roles.cache.find(r => r.name.includes('Server'));
+        let extraRole2 = message.guild.roles.cache.find(r => r.name.includes('Rank'));
+        let extraRole3 = message.guild.roles.cache.find(r => r.name.includes('Self'));
         if(message.member.roles.cache.has(welcomeRole)){
-            message.channel.send('You are already verified!!')
-        }else {
+            message.channel.send('You are already verified!');
+        }else{
+            message.member.roles.add(welcomeRole);
+            message.member.roles.add(extraRole1);
+            message.member.roles.add(extraRole2);
+            message.member.roles.add(extraRole3);
             message.channel.send('I see you are not verified, Let me change that!');
-            guildMember.roles.add(welcomeRole);
-            guildMember.roles.add(extraRole1);
-            guildMember.roles.add(extraRole2);
-            guildMember.roles.add(extraRole3);
         }
     }
 }
