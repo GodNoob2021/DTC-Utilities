@@ -181,4 +181,5 @@ client.on('guildMemberRemove', async member => {
 });
 
 
-client.login("ODU2MTYyNDkzNzUwODM3MjY4.YM9BdQ.4RLrQT64AFbXk-mBjE1WO9wp8wk");
+client.login(process.env.DISCORD_TOKEN);
+
